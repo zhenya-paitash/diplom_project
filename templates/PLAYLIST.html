@@ -1,0 +1,74 @@
+{% extends '_HTML_BODY.html' %}
+
+
+
+{% block title %}
+    Плейлист
+{% endblock %}
+
+
+{% block current %}
+    <li><a href="/">Главная</a></li>
+    <li><a href="/films">Фильмы</a></li>
+    <li><a href="/series">Сериалы</a></li>
+    <li><a href="/cartoons">Мультфильмы</a></li>
+    <li><a href="/afisha/">Афиша</a></li>
+    <li><a href="/weather/">Погода</a></li>
+    <li><a href="/money/">Валюта</a></li>
+    <li><a href="/news">Новости</a></li>
+    <li><a href="#" style="color: #4B4B4B">Плейлист</a></li>
+    <li><a href="/about">О проекте</a></li>
+    <li><a href="/contacts">Контакты</a></li>
+{% endblock %}
+
+
+{% block top %}
+	<section class="titlebar">
+        <h1 class="page-title"><span>Плей</span>лист<span>.</span></h1>
+        <div id="particles-js"></div>
+    </section>
+    <hr class="col-md-6 bottom_60">
+{% endblock %}
+
+
+{% block content %}
+<div class="cont">
+    <section id="portfolio" class="portfolio">
+        <div id="grid-container">
+            <div class="cbp-item photography">
+                <a href="https://open.spotify.com/playlist/7tcGFiuphmZkicSbxl5eBw">
+                    <figure class="fig">
+                        <img src="https://i.kinja-img.com/gawker-media/image/upload/s--ypN6iH9q--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/zrarqnhmkoaihvzss5ek.jpg" alt="">
+                        <figcaption>
+                            <h3>METALCORE</h3>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+            <div class="cbp-item photography">
+                <a href="https://open.spotify.com/playlist/1HfuXDwLtwaJ57MxJbZ3kb">
+                    <figure class="fig">
+                        <img src="https://i.kinja-img.com/gawker-media/image/upload/s--ypN6iH9q--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/zrarqnhmkoaihvzss5ek.jpg" alt="">
+                        <figcaption>
+                            <h3>SYNTHPOP</h3>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+            <div class="cbp-item photography">
+                <a href="https://open.spotify.com/playlist/6MFiuivM0TNNByXeVBUvtz">
+                    <figure class="fig">
+                        <img src="https://i.kinja-img.com/gawker-media/image/upload/s--ypN6iH9q--/c_fill,fl_progressive,g_center,h_900,q_80,w_1600/zrarqnhmkoaihvzss5ek.jpg" alt="">
+                        <figcaption>
+                            <h3>80'S ROCK HITS</h3>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+        </div>
+    </section>
+    <div class="col-md-8 offset-md-2 top_90">
+    <iframe width="100%" height="400" src="https://www.youtube.com/embed/videoseries?&list=PLrhXu51r6bNLalbFHwTZoVHFM2w8-j0z4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div> <!-- cont end -->
+{% endblock %}

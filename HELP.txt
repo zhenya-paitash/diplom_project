@@ -1,0 +1,13 @@
+d:
+cd D:\LEARN\FLASK\HEROKU
+
+heroku git:clone -a zhenyapaitash
+heroku git:remote -a zhenyapaitash
+
+git status
+
+git add .
+git commit -am "FLASK APP"
+git push heroku master
+
+heroku ps:scale web=1

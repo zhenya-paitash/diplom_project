@@ -1,0 +1,79 @@
+{% extends '_HTML_BODY.html' %}
+
+
+
+{% block title %}
+    Валюта
+{% endblock %}
+
+
+{% block top %}
+	<section class="titlebar">
+        <h1 class="page-title"><span>Ва</span>люта<span>.</span></h1>
+        <div id="particles-js"></div>
+    </section>
+    <hr class="col-md-6 bottom_60">
+{% endblock %}
+
+
+{% block current %}
+    <li><a href="/">Главная</a></li>
+    <li><a href="/films">Фильмы</a></li>
+    <li><a href="/series">Сериалы</a></li>
+    <li><a href="/cartoons">Мультфильмы</a></li>
+    <li><a href="/afisha">Афиша</a></li>
+    <li><a href="/weather">Погода</a></li>
+    <li><a href="#" style="color: #4B4B4B">Валюта</a></li>
+    <li><a href="/news">Новости</a></li>
+    <li><a href="/playlist">Плейлист</a></li>
+    <li><a href="/about">О проекте</a></li>
+    <li><a href="/contacts">Контакты</a></li>
+{% endblock %}
+
+
+{% block content %}
+<div class="cont">
+      <h4 class="flask-info" style="text-align: left; font-size: 44px; font-weight: 900; letter-spacing: -4px; line-height: 30px;">Валюта<span style="color: white">:</span></h4>
+      <p style="text-align: left; font-size: 34px; font-weight: 200; letter-spacing: -2px;">Курс валюты {{ DATE }}</p>
+    <form id="form-money" method="POST">
+        <div class="form-row">
+            <div class="col-md-6 text-center" style="padding-top: 10px;">
+                <input type="date" id="inputDate" max="{{ today }}" min="2016-01-01" name="DATE" class="site-btn2" style="height: 50px; width: 100%">
+            </div>
+            <div class="col-md-6 text-center" style="padding-top: 10px;">
+                <input type="submit" value="Показать" class="site-btn2" style="height: 50px; width: 100%">
+            </div>
+        </div>
+    </form>
+
+    <hr class="top_30 col-md-8">
+
+    <div class="table">
+        <div class="table-responsive">
+            <table class="table table-hover" style="text-align: center; font-size: 12px; background-color: transparent; color: black;">
+                <thead style="background-color: transparent;">
+                    <tr class="table-light">
+                        <th>Валюта</th>
+                        <th>Наименование</th>
+                        <th>Соотношение</th>
+                        <th>Значение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for x in range(26) %}
+                        {% if money != [] %}
+                        <tr>
+                            <td style="width: 20%" class="table-dark table-board">{{ landmarks[x].abbreviation }}</td>
+                            <td class="table-dark">{{ landmarks[x].name }}</td>
+                            <td style="width: 10%" class="table-dark">{{ landmarks[x].scale }}</td>
+                            <td style="width: 20%" class="table-dark table-board">{{ money[0][x+2] }}</td>
+                        </tr>
+                        {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div> <!-- cont end -->
+{% endblock %}

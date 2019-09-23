@@ -1,0 +1,88 @@
+{% extends '_HTML_BODY.html' %}
+
+
+
+{% block title %}
+    Новости
+{% endblock %}
+
+
+{% block current %}
+    <li><a href="/">Главная</a></li>
+    <li><a href="/films">Фильмы</a></li>
+    <li><a href="/series">Сериалы</a></li>
+    <li><a href="/cartoons">Мультфильмы</a></li>
+    <li><a href="/afisha/">Афиша</a></li>
+    <li><a href="/weather/">Погода</a></li>
+    <li><a href="/money/">Валюта</a></li>
+    <li><a href="#" style="color: #4B4B4B">Новости</a></li>
+    <li><a href="/playlist">Плейлист</a></li>
+    <li><a href="/about">О проекте</a></li>
+    <li><a href="/contacts">Контакты</a></li>
+{% endblock %}
+
+
+{% block top %}
+	<section class="titlebar">
+        <h1 class="page-title"><span>Но</span>вости<span>.</span></h1>
+        <div id="particles-js"></div>
+    </section>
+    <hr class="col-md-6 bottom_60">
+{% endblock %}
+
+
+{% block content %}
+<div class="cont">
+    <section id="portfolio" class="portfolio">
+        <div id="grid-container">
+
+
+            {% for x in range(30) %}
+            <div class="cbp-item photography">
+                <a href="{{ one[x].href }}">
+                    <figure class="fig">
+                        <img src="{{ one[x].img }}" alt="">
+                        <figcaption>
+                            <h3 style="font-size: 24px;margin-top: -100px" >{{ one[x].name }}</h3>
+                        </figcaption>
+                    </figure>
+                    <p style=" font-size: 12px">
+                        <span style="font-size: 10px;color: #323232">ID новости в базе данных : {{ two[x].id }}</span><br/>{{ one[x].text }}
+                    </p>
+                    <hr class="col-md-6">
+                </a>
+            </div>
+
+            <div class="cbp-item photography name-news">
+                <a href="{{ two[x].href }}">
+                    <p style=" font-size: 32px;font-weight: 950;line-height: 30px;">
+                        <span style="font-size: 10px;color: #323232">ID новости в базе данных : {{ two[x].id }}</span>
+                        <br/>{{ two[x].name }}
+                    </p>
+                    <hr class="col-md-6">
+                </a>
+            </div>
+
+            <div class="cbp-item photography">
+                <a href="{{ three[x].href }}">
+                    <figure class="fig">
+                        <img src="{{ three[x].img }}" alt="">
+                        <figcaption>
+                            <h3 style="font-size: 32px" >{{ three[x].title }}</h3>
+                        </figcaption>
+                    </figure>
+                    <p style=" font-size: 12px">
+                        <span style="font-size: 10px;color: #323232">ID новости в базе данных : {{ two[x].id }}</span>
+                        <br/>{{ three[x].date }}
+                    </p>
+                    <hr class="col-md-6">
+                </a>
+            </div>
+            {%endfor%}
+        </div>
+    </section>
+            <div class="col-md-12 text-center">
+                <a href="/news" class="site-btn arrow">Обновить список</a>
+            </div>
+</div>
+{% endblock %}

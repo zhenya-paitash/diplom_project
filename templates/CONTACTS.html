@@ -1,0 +1,89 @@
+{% extends '_HTML_BODY.html' %}
+
+
+
+{% block title %}
+    Контакты
+{% endblock %}
+
+
+{% block current %}
+    <li><a href="/">Главная</a></li>
+    <li><a href="/films">Фильмы</a></li>
+    <li><a href="/series">Сериалы</a></li>
+    <li><a href="/cartoons">Мультфильмы</a></li>
+    <li><a href="/afisha/">Афиша</a></li>
+    <li><a href="/weather/">Погода</a></li>
+    <li><a href="/money/">Валюта</a></li>
+    <li><a href="/news">Новости</a></li>
+    <li><a href="/playlist">Плейлист</a></li>
+    <li><a href="/about">О проекте</a></li>
+    <li><a href="#" style="color: #4B4B4B">Контакты</a></li>
+{% endblock %}
+
+
+{% block top %}
+	<section class="titlebar">
+        <h1 class="page-title"><span>Кон</span>такты<span>.</span></h1>
+        <div id="particles-js"></div>
+    </section>
+    <hr class="col-md-6 bottom_60">
+{% endblock %}
+
+
+{% block content %}
+<div class="cont">
+    <section class="contact col-md-8 offset-md-2 top_90">
+        <div class="contact-info text-center">
+            <p><i class="fa fa-map-marker"></i> г. Минск, ул. Мележа д.1. Бизнес-центр «Парус»</p> 
+            <p><i class="fa fa-envelope"></i> naitavv93@gmail.com</p> 
+            <p><i class="fa fa-phone"></i> mts : + 375 (33) 35 13 559</p>
+        </div>
+            <div id="map" style="padding-top: 30px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2348.607958241047!2d27.598108815610406!3d53.93870853787662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf14efd80b09%3A0x82f491ddc96ee180!2z0YPQuy4g0JzQtdC70LXQttCwLCDQnNC40L3RgdC6LCDQkdC10LvQsNGA0YPRgdGM!5e0!3m2!1sru!2sth!4v1565348055573!5m2!1sru!2sth" width="100%" height="250px" frameborder="0" style="border:0; -webkit-border-radius: 40px; -moz-border-radius: 40px; -o-border-radius: 40px; border-radius: 40px; " allowfullscreen></iframe>
+            </div>
+        <div class="contact-form top_90">
+            <form class="row" method="POST">
+                <div class="col-md-6">
+                    <input class="inp" type="text" placeholder="Имя" name="NAME">
+                </div>
+                <div class="col-md-6">
+                    <input class="inp" type="text" placeholder="Почта" name="MAIL">
+                </div>
+                <div class="col-md-12">
+                    <textarea placeholder="Отзыв" rows="6" class="col-md-12 form-message" name="REVIEW"></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                    <input type="submit" value="Отправить" class="site-btn2">
+                </div>
+            </form>
+        </div>
+    </section>
+    <div class="cont top_30">
+        <aside>
+            <div class="widget-latest-news">
+                <h2 class="widgets-title">Отзывы посетителей:</h2>
+                <ul>
+                    {% for row in review %}
+                    <li>
+                        <p style="font-size: 16px">{{ row.name }}<span> | {{ row.mail }}</span></p>
+                        <p>{{ row.review }}</p>
+                        <span>{{ row.clock }} | <span style="font-size: 8px">ID сообщения : {{ row.id }}</span></span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+</div> <!-- cont end -->
+
+
+
+
+
+
+
+
+
+{% endblock %}

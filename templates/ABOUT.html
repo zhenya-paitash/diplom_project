@@ -1,0 +1,52 @@
+{% extends '_HTML_BODY.html' %}
+
+
+
+{% block title %}
+    О проекте
+{% endblock %}
+
+
+{% block current %}
+    <li><a href="/">Главная</a></li>
+    <li><a href="/films">Фильмы</a></li>
+    <li><a href="/series">Сериалы</a></li>
+    <li><a href="/cartoons">Мультфильмы</a></li>
+    <li><a href="/afisha/">Афиша</a></li>
+    <li><a href="/weather/">Погода</a></li>
+    <li><a href="/money/">Валюта</a></li>
+    <li><a href="/news">Новости</a></li>
+    <li><a href="/playlist">Плейлист</a></li>
+    <li><a href="#" style="color: #4B4B4B">О проекте</a></li>
+    <li><a href="/contacts">Контакты</a></li>
+{% endblock %}
+
+
+{% block top %}
+	<section class="titlebar">
+        <h1 class="page-title"><span>О про</span>екте<span>.</span></h1>
+        <div id="particles-js"></div>
+    </section>
+    <hr class="col-md-6 bottom_60">
+{% endblock %}
+
+
+{% block content %}
+<div class="cont">
+            <section class="about">
+                <!-- ABOUT TEXT -->
+                <div class="about-text text-center top_90">
+                    <h2 class="subtitle">Рад приветствовать Вас на моём дипломном проекте: FLASK-приложение.<br/>Задача стояла следующая:</h2><br>
+                    <p class="subtitle">Приложение на Flask:</p>
+                    <p>
+                        <span style="color: white; font-size: 30px">1. </span>По запросу 127.0.0.1:5000:/movies выводит на странице список фильмов, идущих в кинотеатрах (фильмы можно спарсить с сайта https://afisha.tut.by/film/)<br/><br/>
+                        <span style="color: white; font-size: 30px">2. </span>По запросу 127.0.0.1:5000:/courses выводит курсы валют на сегодня.- по запросу 127.0.0.1:5000:/weather на страницу выводиться две колнки:погода на ближайшие 3 часа и на весь день.Так же присутствует форма «данные о погоде в городе» - введя название города и нажав кнопку будет возможность получить данные о погоде в заданном горде на сегодня. Использовать для получения данных можно, скажем,    https://openweathermap.org/<br/><br/>
+                        <span style="color: white; font-size: 30px">3. </span>Кроме того присутствует возможность получать архивные данные. Для этого создайте базу, в которой будут таблицы, хранящие информацию о:-курсах валют за 3 месяца(3-4)-фильмах за этот же срок-погоде (так же 3 месяца)Затем на каждой странице разместите форму, принимающую на вход дату, и, при нажатии на кнопку, выводящю информацию за введенную дату.<br/><br/>
+                        <span style="color: white; font-size: 30px">4. </span>Обработать возможные исключения.</p><br/>
+                    <p class="subtitle">Telegram-bot:</p>
+                    <p>
+                        <span style="color: white; font-size: 30px">1. </span>Добавить боту функционал, дублирующий функции фласк-приложения: после команд Weather, courses, movies выводить соответствующую информацию. Так же в Телеграмма присутствует возможность отправить свою локацию. Поэтому после отправки локации бот должен вернуть список аптек, банкоматов и кафе в радиусе километра от вас.  Добавить кнопки и смайлики рядом с названием кнопки.
+                    </p>
+            </section>
+</div> <!-- cont end -->
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends '_HTML_BODY.html' %}
+
+
+
+{% block title %}
+    Мультфильмы
+{% endblock %}
+
+
+{% block top %}
+	<section class="titlebar">
+        <h1 class="page-title"><span>Мульт</span>фильмы<span>.</span></h1>
+        <div id="particles-js"></div>
+    </section>
+    <hr class="col-md-6 bottom_60">
+{% endblock %}
+
+
+{% block current %}
+    <li><a href="/">Главная</a></li>
+    <li><a href="/films">Фильмы</a></li>
+    <li><a href="/series">Сериалы</a></li>
+    <li><a href="#" style="color: #4B4B4B">Мультфильмы</a></li>
+    <li><a href="/afisha">Афиша</a></li>
+    <li><a href="/weather">Погода</a></li>
+    <li><a href="/money">Валюта</a></li>
+    <li><a href="/news">Новости</a></li>
+    <li><a href="/playlist">Плейлист</a></li>
+    <li><a href="/about">О проекте</a></li>
+    <li><a href="/contacts">Контакты</a></li>
+{% endblock %}
+
+
+{% block content %}
+<div class="wrapper">
+    <div class="cont">
+        <section class="our-news">
+            <div class="row">
+                {% for row in cartoons %}
+                <a href="{{ row.href }}" class="col-md-12 news-list bottom_60">
+                    <article class="news-box row">
+                        <figure class="col-md-4"><img src="{{ row.img }}" alt=""></figure>
+                        <div class="col-md-8 left-list">
+                            <h4 class="title" style="margin-top: -45px">{{ row.name.upper() }}</h4>
+                            <small>ID в базе данных: {{ row.id }}</small>
+                            <div class="information">Рейтинги: <span>{{ row.rate_kp }}</span> | <span>{{ row.rate_imdb }}</span></div>
+                            {% if row.tagline != "" %}
+                            <div class="information">Слоган: <span>{{ row.tagline }}</span></div>
+                            {% endif %}
+                            <div class="information">Дата выхода: <span>{{ row.date }}</span></div>
+                            <div class="information">Страна: <span>{{ row.country }}</span></div>
+                            <div class="information">Режиссер: <span>{{ row.producer }}</span></div>
+                            <div class="information">Жанр: <span>{{ row.genre }}</span></div>
+                            {% if row.age != "" %}
+                            <div class="information">Возраст: <span>{{ row.age }}</span></div>
+                            {% endif %}
+                            {% if row.time != "" %}
+                            <div class="information">Время: <span>{{ row.time }}</span></div>
+                            {% endif %}
+                            <div class="information">В ролях актеры: <span>{{ row.actors }}</span></div>
+                            <p style="font-size: 12px; color: white">{{ row.description }}</p>
+                        </div>
+                    </article>
+                </a>
+                {% endfor %}
+            </div>
+        </section>
+        <div class="col-md-12 text-center">
+            <a href="/cartoons" class="site-btn arrow">Обновить список</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

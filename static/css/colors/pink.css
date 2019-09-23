@@ -1,0 +1,52 @@
+/* --------------------------------- */
+/* Css Styles                        */
+/*---------------------------------- */
+
+
+.home .home-content .hero-title span, .home .home-content .top_45 span, .flask-info, .widget-twitter a,
+	footer h4, footer .social a:hover, .full-menu .full-inner nav ul li a:hover,
+	.full-menu .full-inner .full-contact ul li.title, .full-menu .full-inner .full-contact ul li .social a:hover,
+	.home .home-content .social a:hover i, .titlebar .page-title span, .news-box small, .news-list:hover .news-box .title,
+	.news-article .category, .article-comments .comment-content .reply, .widgets-title, .widget-latest-news ul li a:hover p,
+	.widget-categories ul li a:hover, footer #heroku p, footer #heroku strong:hover, #site-in-project span, header logo,
+	.demo .settings, .cont .someone_text p, .cont .contact .contact-info i, .cont .table thead, .cont .table p,
+	.name-news p {
+    	color: #fb1bc1;
+}
+
+body { background: linear-gradient(to left, #fb1bc1 0%, #3163f3 100%) }
+
+.full-open .nav-icon:hover span, .owl-carousel.work-areas .area .line, .owl-theme .owl-controls .owl-page.active span,
+ 	.site-btn2:hover, .cbp-item figure, .cont .table .table-board, .cont .table .table-up, .cbp-item figure figcaption h3,
+ 	#myBtn {
+	background: #fb1bc1 !important;
+}
+
+.cbp-l-loadMore-link{
+    border: solid 2px #fb1bc1 !important;
+
+}
+
+footer{
+    border-bottom: solid 6px #fb1bc1;
+}
+
+input.inp:focus, textarea.form-message:focus{
+	border-color: #fb1bc1;
+}
+
+.cbp-l-loadMore-link, .site-btn{
+	background: linear-gradient(to right, #fb1bc1 50%, #ffffff00 50%);
+}
+
+
+
+
+
+
+
+
+
+
+
+

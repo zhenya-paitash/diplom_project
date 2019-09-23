@@ -1,0 +1,7 @@
+my_env
+BOT
+__pycache__
+.git
+
+
+db_app.db

@@ -1,0 +1,74 @@
+{% extends '_HTML_BODY.html' %}
+
+
+
+{% block title %}
+    Афиша
+{% endblock %}
+
+
+{% block top %}
+	<section class="titlebar">
+        <h1 class="page-title"><span>Афи</span>ша<span>.</span></h1>
+        <div id="particles-js"></div>
+    </section>
+    <hr class="col-md-6 bottom_60">
+{% endblock %}
+
+
+{% block current %}
+    <li><a href="/">Главная</a></li>
+    <li><a href="/films">Фильмы</a></li>
+    <li><a href="/series">Сериалы</a></li>
+    <li><a href="/cartoons">Мультфильмы</a></li>
+    <li><a href=" #" style="color: #4B4B4B">Афиша</a></li>
+    <li><a href="/weather">Погода</a></li>
+    <li><a href="/money">Валюта</a></li>
+    <li><a href="/news">Новости</a></li>
+    <li><a href="/playlist">Плейлист</a></li>
+    <li><a href="/about">О проекте</a></li>
+    <li><a href="/contacts">Контакты</a></li>
+{% endblock %}
+
+
+{% block content %}
+<div class="cont">
+    <section class="our-news">
+        <h4 class="flask-info" style="text-align: left; font-size: 44px; font-weight: 900; letter-spacing: -4px; line-height: 30px;">Афиша<span style="color: white">:</span></h4>
+        <p style="text-align: left; font-size: 34px; font-weight: 200; letter-spacing: -2px;">Мероприятия {{ DATE }}</p>
+        <form id="form-money" method="POST">
+            <div class="form-row">
+                <div class="col-md-6 text-center" style="padding-top: 10px;">
+                    <input type="date" id="inputDate" max="{{ today }}" min="2019-09-01" name="DATE" class="site-btn" style="height: 50px; width: 100%">
+                </div>
+                <div class="col-md-6 text-center" style="padding-top: 10px;">
+                    <input type="submit" value="Показать" class="site-btn" style="height: 50px; width: 100%">
+                </div>
+            </div>
+        </form>
+        <hr class="top_30 col-md-8">
+        <div class="row">
+            {% for row in afisha %}
+            <div class="col-md-4 col-sm-4 news bottom_60 bottom_60" style="padding: 3px;">
+            <a href="{{ row.href }}">
+                <article class="news-box">
+                    <figure><img src="{{ row.poster }}" alt=""></figure>
+                    <section style="height: 75px">
+                        <h4 class="title">{{ row.name }}</p>
+                    </section>
+                    <div class="information"><span>{{ row.time }}</span></div>
+                    <section style="height: 125px">
+                        <small style="font-size: 12px;word-wrap: break-word;">{{ row.description[:200] }}...</small>
+                    </section>
+                    </article>
+                </a>
+                <a href="{{ row.href }}" class="site-btn arrow top_15">Купить билет</a>
+                {% if row.trailer != "" %}
+                <a href="{{ row.trailer }}" class="site-btn arrow top_15">Трейлер</a>
+                {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+</div> <!-- cont end -->
+{% endblock %}

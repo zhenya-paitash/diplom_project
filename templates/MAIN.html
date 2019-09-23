@@ -1,0 +1,231 @@
+{% extends '_HTML_BODY.html' %}
+
+
+
+{% block title %}
+    Главная
+{% endblock %}
+
+
+{% block current %}
+    <li><a href="#" style="color: #4B4B4B">Главная</a></li>
+    <li><a href="/films">Фильмы</a></li>
+    <li><a href="/series">Сериалы</a></li>
+    <li><a href="/cartoons">Мультфильмы</a></li>
+    <li><a href="/afisha">Афиша</a></li>
+    <li><a href="/weather">Погода</a></li>
+    <li><a href="/money">Валюта</a></li>
+    <li><a href="/news">Новости</a></li>
+    <li><a href="/playlist">Плейлист</a></li>
+    <li><a href="/about">О проекте</a></li>
+    <li><a href="/contacts">Контакты</a></li>
+{% endblock %}
+
+
+{% block top %}
+<section class="home">
+    <div id="particles-js"></div>
+    <div class="home-content">
+        <p class="top_45">
+            <i style="font-family: fantasy; color:white">
+            <i class="fab fa-python" aria-hidden="true" style="font-size: 12px"></i>python<span>3.6</span>, 
+            <i class="fa fa-database" aria-hidden="true" style="font-size: 12px"></i>sql<span>3</span>, 
+            <i class="fab fa-css3-alt" aria-hidden="true" style="font-size: 12px"></i>css<span>3</span>, 
+            <i class="fab fa-html5" aria-hidden="true" style="font-size: 12px"></i>html<span>5</span>, 
+            <i class="fab fa-page4" aria-hidden="true" style="font-size: 11px"></i>bootstrap<span>4</span></i><br/>
+
+            <span class="element" data-text1="pip install flask" data-text2="pip install requests" data-text3="pip install beautifulsoup4" data-loop="true" data-backdelay="200" style="opacity: 0.2;"></span><br/>
+            <span class="element" data-text1="app.config.update" data-text2="DB=os.path.join(root_path,'db.db')" data-text3="app.config.from_envvar('st_p')" data-loop="true" data-backdelay="300" style="opacity: 0.4"></span><br/>
+            <span class="element" data-text1="def connect_db():" data-text2="rv=sqlite3.connect(app.config['DB'])" data-text3="rv.row_factory=sqlite3.Row" data-loop="true" data-backdelay="400" style="opacity: 0.6"></span><br/>
+            <span class="element" data-text1="connect=sqlite3.connect('MEDIA.db')" data-text2="curs=connect.cursor()" data-text3="curs.execute('DROP TABLE movies')" data-loop="true" data-backdelay="500" style="opacity: 0.8"></span><br/>
+            <span class="element" data-text1="@app.errorhandler(404)" data-text2="def not_found(event):" data-text3="return render_template('404.html')" data-loop="true" data-backdelay="600"></span><br/>
+            <span class="element" data-text1="pip install flask" data-text2="pip install requests" data-text3="pip install beautifulsoup4" data-loop="true" data-backdelay="700" style="color: #fff;"></span>
+        </p>
+        <h1 class="hero-title" style="text-align: center">zh<span>e</span>nya pa<span>i</span>tash<br><span>d</span>i<span>plom pro</span>j<span>ect</span>.</h1>
+        <p class="top_45" style="text-align: right;">
+            <span class="element" data-text1="Главная" data-text2="дипломный проект" data-text3="Пайташ Евгений" data-loop="true" data-backdelay="2400" style="color: #fff"></span><br/>
+        </p>
+        <div class="social">
+            <a class="text">связаться со мной</a>
+            <div class="line"></div>
+            <a href="https://vk.com/zhenio"><i class="fab fa-vk"aria-hidden="true"></i>  </a>
+            <a href="https://open.spotify.com/playlist/7tcGFiuphmZkicSbxl5eBw"><i class="fab fa-spotify" aria-hidden="true"></i>  </a>
+            <a href="https://www.youtube.com/playlist?list=PLrhXu51r6bNLalbFHwTZoVHFM2w8-j0z4"><i class="fab fa-youtube" aria-hidden="true"></i>  </a>
+            <a href="https://github.com/zhenya-paitash"><i class="fab fa-github" aria-hidden="true"></i>  </a>
+            <a href="https://t.me/zhenya_paitash_diplom_project"><i class="fab fa-telegram" aria-hidden="true"></i>  </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+
+{% block content %}
+    <div class="cont">
+        <section id="portfolio" class="portfolio">
+                <div id="grid-container">
+                    <div class="cbp-item photography">
+                        <a href="/films">
+                            <figure class="fig">
+                                <img src="{{ url_for('static', filename='images/FILMS.jpg') }}" alt="">
+                                <figcaption>
+                                    <h3>ФИЛЬМЫ</h3>
+                                    <p>рандомный спиок фильмов</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="cbp-item photography">
+                        <a href="/series">
+                            <figure class="fig">
+                                <img src="{{ url_for('static', filename='images/SERIES.jpg') }}" alt="">
+                                <figcaption>
+                                    <h3>СЕРИАЛЫ</h3>
+                                    <p>рандомный спиок сериалов</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="cbp-item photography">
+                        <a href="/cartoons">
+                            <figure class="fig">
+                                <img src="{{ url_for('static', filename='images/CARTOONS.jpg') }}" alt="">
+                                <figcaption>
+                                    <h3>МУЛЬТФИЛЬМЫ</h3>
+                                    <p>рандомный спиок мультфилмов</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+
+
+
+                    <div class="cbp-item branding">
+                        <a href="/afisha">
+                            <figure class="fig">
+                                <img src="{{ url_for('static', filename='images/AFISHA.jpg') }}" alt="">
+                                <figcaption>
+                                    <h3>АФИША</h3>
+                                    <p>мероприятия с http://kino.bycard.by/</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="cbp-item branding">
+                        <a href="/weather">
+                            <figure class="fig">
+                                <img src="{{ url_for('static', filename='images/WEATHER.jpg') }}" alt="">
+                                <figcaption>
+                                    <h3>ПОГОДА</h3>
+                                    <p>погода (архив на 5 лет)</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="cbp-item digital">
+                        <a href="/money">
+                            <figure class="fig">
+                                <img src="{{ url_for('static', filename='images/MONEY.jpg') }}" alt="">
+                                <figcaption>
+                                    <h3>ВАЛЮТА</h3>
+                                    <p>курсы валют (архив на 3 года)</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+
+
+
+                    <div class="cbp-item branding">
+                        <a href="/news">
+                            <figure class="fig">
+                                <img src="{{ url_for('static', filename='images/NEWS.jpg') }}" alt="">
+                                <figcaption>
+                                    <h3>НОВОСТИ</h3>
+                                    <p>новости кино и технологий</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="cbp-item branding">
+                        <a href="/playlist">
+                            <figure class="fig">
+                                <img src="{{ url_for('static', filename='images/PLAYLIST.jpg') }}" alt="">
+                                <figcaption>
+                                    <h3>ПЛЕЙЛИСТ</h3>
+                                    <p>музыка с Youtube</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="cbp-item branding">
+                        <a href="/about">
+                            <figure class="fig">
+                                <img src="{{ url_for('static', filename='images/ABOUT.jpg') }}" alt="">
+                                <figcaption>
+                                    <h3>О ПРОЕКТЕ</h3>
+                                    <p>задание</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+
+
+
+                    <div class="cbp-item digital">
+                        <a href="/contacts">
+                            <figure class="fig">
+                                <img src="{{ url_for('static', filename='images/CONTACTS.jpg') }}" alt="">
+                                <figcaption>
+                                    <h3>КОНТАКТЫ</h3>
+                                    <p>оставить отзыв/связаться</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="cbp-item digital">
+                        <a href="https://t.me/zhenya_diplom_bot">
+                            <figure class="fig">
+                                <img src="{{ url_for('static', filename='images/TELEBOT.jpg') }}" alt="">
+                                <figcaption>
+                                    <h3>ТЕЛЕГРАМ БОТ</h3>
+                                    <p>бот в t.me</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="cbp-item digital">
+                        <a href="/">
+                            <figure class="fig">
+                                <img src="{{ url_for('static', filename='images/MAIN_PAGE.jpg') }}" alt="">
+                                <figcaption>
+                                    <h3>ГЛАВНАЯ</h3>
+                                    <p>на главную</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+
+
+
+        </section>
+
+        <section style="padding-top: 150px">
+            <div class="article-video">
+                <iframe src="https://player.vimeo.com/video/94686522?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+        </section>
+
+
+        <hr class="top_90 col-md-8">
+        <section class="flask-info" style="height: 430px">
+            <h4 class="flask-info" style="text-align: center; font-size: 44px; font-weight: 900; letter-spacing: -4px; line-height: 30px;">Информация<span style="color: white">:</span></h4>
+            <span class="element" data-text1="<tb>Flask — фреймворк для создания веб-приложений на языке программирования Python, использующий набор инструментов Werkzeug, а также шаблонизатор Jinja2. Относится к категории так называемых микрофреймворков — минималистичных каркасов веб-приложений, сознательно предоставляющих лишь самые базовые возможности." data-text2="“Микро” не означает, что ваше веб-приложение целиком помещается в один файл с кодом на Python, хотя, конечно же это может быть и так. Также, это не означает, что Flask испытывает недостаток функциональности. «Микро» в слове «микрофреймворк» означает, что Flask стремится придерживаться простого, но расширяемого ядра. Flask не будет решать за вас многие вещи, например, какую базу данных использовать. А те решения, которые он может принять, например, который из движков для работы с шаблонами использовать, легко изменить. Всё остальное зависит от вас, таким образом, может оказаться, что Flask - всё, что вам нужно, и ничего лишнего." data-text3="По умолчанию, Flask не включает уровень абстракции баз данных, валидации форм или каких-то иных, для чего уже существуют различные занимающиеся этим библиотеки. Вместо этого, Flask поддерживает расширения для добавления подобной функциональности в ваше приложение, таким образом, как если бы это было реализовано в самом Flask. Многочисленные расширения обеспечивают интеграцию с базами данных, валидацию форм, обработку загрузок на сервер, различные открытые технологии аутентификации и так далее. Flask может быть «микро», но при этом он готов для использования в реальных задачах для самых разнообразных нужд." data-loop="true" data-backdelay="5000" style=" font-weight: 400; font-style: italic; font-size: 12px; color: #fff"></span>
+        </section>
+        <hr class="top_50 col-md-8">
+
+
+        <section class="sites" id="site-in-project" style="text-align:center; font-size: 10px; height: 8px"><p><i class="fab fa-ioxhost"aria-hidden="true"></i> В проекте использованы следеющие ресурсы : <br/><br/><span class="element" data-text1="https://heroku.com" data-text2="https://meteo.by" data-text3="https://openweathermap.org" data-loop="true" data-backdelay="2150"></span>
+        <br/><span class="element" data-text1="https://rezka.ag" data-text2="https://afisha.tut.by" data-text3="https://bootstraptema.ru" data-loop="true" data-backdelay="3250"></span></p></section>
+
+    </div> <!-- cont end -->
+{% endblock %}

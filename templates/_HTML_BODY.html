@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>
+
+        {% block title %}
+
+        {% endblock %} | ДИПЛОМНЫЙ ПРОЕКТ
+
+    </title>
+
+  <link rel="icon" type="image/ico" href="{{ url_for('static', filename='images/favicon.ico') }}">
+	<meta charset="UTF-8">
+	<meta name="description" content="Евгений Пайташ | ДИПЛОМНЫЙ ПРОЕКТ">
+	<meta name="keywords" content="diplom project python">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='cubeportfolio/css/cubeportfolio.min.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/colors/red.css') }}" id="color"/>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dark.css') }}"/>
+
+    <!-- Google Web fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800" rel="stylesheet">
+
+    <!-- Font icons -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='icon-fonts/fontawesome-5.0.6/css/fontawesome-all.min.css') }}"/>
+
+</head>
+<body>
+    <!-- PRELOADER -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <a href="/"><i class="fab fa-python" aria-hidden="true" style="color: white;font-size: 14px"> create on <logo>FLASK</logo></i></a>
+        <div class="nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- FULL MENU -->
+    <div class="full-menu">
+        <div class="full-inner row">
+            <nav class="col-md-8">
+                <ul>
+
+                    {% block current %}
+
+                    {% endblock %}
+
+                </ul>
+            </nav>
+            <div class="col-md-4 full-contact">
+                <ul>
+                    <li class="title">host on HEROKU.COM</li>
+                    <li>zhenyapaitash.herokuapp.com</li>
+                    <li>
+                        <div class="social">
+                            <a href="https://vk.com/zhenio"><i class="fab fa-vk"aria-hidden="true"></i>  </a>
+                            <a href="https://open.spotify.com/playlist/7tcGFiuphmZkicSbxl5eBw"><i class="fab fa-spotify" aria-hidden="true"></i>  </a>
+                            <a href="https://www.youtube.com/playlist?list=PLrhXu51r6bNLalbFHwTZoVHFM2w8-j0z4"><i class="fab fa-youtube" aria-hidden="true"></i>  </a>
+                            <a href="https://github.com/zhenya-paitash"><i class="fab fa-github" aria-hidden="true"></i>  </a>
+                            <a href="https://t.me/zhenya_paitash_diplom_project"><i class="fab fa-telegram" aria-hidden="true"></i>  </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- SITE CONTENT -->
+    <div class="wrapper">
+
+        {% block top %}
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+
+    </div> <!-- wrapper end -->
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/tabs.css') }}"/>
+<div class="container" style="color: white;font-size: 10px">
+    <br/>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <span class="glyphicon glyphicon-list-alt"></span>Новости <b>HINEWS</b> :
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <ul class="demo1">
+            {% for row in hinews %}
+            <li class="news-item">
+              <table cellpadding="4">
+                <tr>
+                  <td><img src="{{ row.img }}" width="60" class="img-circle" /></td>
+                  <td><a href="{{ row.href }}">{{ row.name }}<br/><p style="font-size: 6px">{{ row.text }}</p></a></td>
+                </tr>
+              </table>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4" style="font-size: 10px">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <span class="glyphicon glyphicon-list-alt"></span>Новости <b>HABR</b> :
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-12">
+              <ul class="demo2">
+                {% for row in habr %}
+                <a href="{{ row.href }}">
+                  <li class="news-item">{{ row.name }}</li>
+                </a>
+                <br/>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <span class="glyphicon glyphicon-list-alt"></span>Новости <b>LOSTFILM</b> :
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <ul class="demo1">
+            {% for row in lostfilm %}
+            <li class="news-item">
+              <table cellpadding="4">
+                <tr>
+                  <td><img src="{{ row.img }}" width="60" class="img-circle" /></td>
+                  <td><a href="{{ row.href }}">{{ row.title }}</a><br/><p style="font-size: 10px">{{ row.date }}</p></td>
+                </tr>
+              </table>
+            </li>
+            {% endfor %}
+            <br/><br/>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-chevron-up"></i></button>
+<script>
+var mybutton = document.getElementById("myBtn");
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+    <footer>
+       <div class="cont">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12 copyright">
+                    <!-- <img src="images/logo.png" alt=""> -->
+                    <h4><i class="fab fa-python"></i> zhenya paitash</h4>
+                    <p>© 2019 Дипломный Проект по курсу "Python"</p>
+                </div>
+                <div class="col-md-4 d-sm-none d-md-block">
+                    <div class="social">
+                        <a href="https://vk.com/zhenio"><i class="fab fa-vk"aria-hidden="true"></i>  </a>
+                        <a href="https://open.spotify.com/playlist/7tcGFiuphmZkicSbxl5eBw"><i class="fab fa-spotify" aria-hidden="true"></i>  </a>
+                        <a href="https://www.youtube.com/playlist?list=PLrhXu51r6bNLalbFHwTZoVHFM2w8-j0z4"><i class="fab fa-youtube" aria-hidden="true"></i>  </a>
+                        <a href="https://github.com/zhenya-paitash"><i class="fab fa-github" aria-hidden="true"></i>  </a>
+                        <a href="https://t.me/zhenya_paitash_diplom_project"><i class="fab fa-telegram" aria-hidden="true"></i>  </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 d-none d-sm-block getintouch" id="heroku">
+                    <a href="https://zhenyapaitash.herokuapp.com/">
+                        <strong>host on HEROKU.COM</strong><br>
+                        <p>zhenyapaitash.herokuapp.com</p>
+                    </a>
+                </div>
+            </div>
+       </div>
+    </footer>
+
+    <!-- Javascripts -->
+    <script src="{{ url_for('static', filename='js/jquery-2.1.4.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='cubeportfolio/js/jquery.cubeportfolio.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/typed.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/particles.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.hover3d.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <!-- for color alternatives -->
+    <script src="{{ url_for('static', filename='js/jquery.cookie-1.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/Demo.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Demo.min.css') }}" />
+
+</body>
+</html>
