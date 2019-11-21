@@ -3,4 +3,4 @@
 
 ⚫ bot:        https://t.me/zhenya_diplom_bot/                    
 ⚫ sqlite3:    https://zhenyapaitash.herokuapp.com/                    
-⚫ postgresql: https://zhenyadiplom.herokuapp.com/                    
+⚫ postgresql: https://zhenyadiplom.herokuapp.com/ (db is full 10_000 rows(PLANhobby-dev) - no updated)                   
