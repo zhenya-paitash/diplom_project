@@ -1,6 +1,6 @@
 # `diplom_project`
 
-###### `The graduation project to create a Flask application and Telegram bot  using various libraries to receive and display the necessary information. Opportunities : •  Receiving and entering into the database a large amount of      information.  • Conclusion from the database of information on more than     27.000 films / series and cartoons, archived weather data for     10 years, currency for up to 3 years, news for the period of 2019, purchase of tickets to cinema and theater.  • Telegram bot duplicates the functions of a flash application and is filled with entertaining content.`
+##### `The graduation project to create a Flask application and Telegram bot  using various libraries to receive and display the necessary information. Opportunities : •  Receiving and entering into the database a large amount of      information.  • Conclusion from the database of information on more than     27.000 films / series and cartoons, archived weather data for     10 years, currency for up to 3 years, news for the period of 2019, purchase of tickets to cinema and theater.  • Telegram bot duplicates the functions of a flash application and is filled with entertaining content.`
 
 ⚫ <a href="https://t.me/zhenya_diplom_bot/">**Telegram bot**</a><br/>
 ⚫ <a href="https://zhenyapaitash.herokuapp.com/">**sqlite3**</a><br/>
