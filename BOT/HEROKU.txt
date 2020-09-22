@@ -1,0 +1,20 @@
+heroku ps:restart
+heroku logs --tail
+
+d:
+cd D:\LEARN\!_MAIN\HEROKU
+
+worker: python main.py $PORT
+
+git commit -am "make it better"
+git push heroku master
+heroku ps:scale worker=1
+
+
+
+heroku login
+heroku git:clone -a shrouded-hollows-83641
+cd shrouded-hollows-83641
+git add .
+git commit -am "make it better"
+git push heroku master
